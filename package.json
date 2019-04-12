@@ -1,0 +1,35 @@
+{
+  "name": "mern-snippets",
+  "displayName": "MERN Snippets",
+  "description": "Mongodb ExpressJS React Nodejs snippets",
+  "version": "1.1.0",
+  "publisher": "devzstudio",
+  "homepage": "https://github.com/Devzstudio/MERN-Snippets/blob/master/README.md",
+  "icon": "icon.png",
+  "bugs": {
+    "url": "https://github.com/Devzstudio/MERN-Snippets/issues",
+    "email": "jijin@devzstudio.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Devzstudio/MERN-Snippets"
+  },
+  "engines": {
+    "vscode": "^1.30.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}

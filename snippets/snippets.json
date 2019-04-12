@@ -1,0 +1,447 @@
+{
+  "ConsoleLog": {
+    "prefix": "cl",
+    "body": ["console.log(`${1}`);"],
+    "description": "Console.Log"
+  },
+  "Export Default": {
+    "prefix": "exd",
+    "body": ["export default $1;"],
+    "description": "Export Default"
+  },
+  "Express Require": {
+    "prefix": "req_express",
+    "body": ["const express = require(\"express\");"],
+    "description": "Express Require"
+  },
+  "Mongoose Require": {
+    "prefix": "req_mongoose",
+    "body": ["const mongoose = require(\"mongoose\");"],
+    "description": "Mongoose Require"
+  },
+  "BodyParser Require": {
+    "prefix": "req_bodyparser",
+    "body": ["const bodyParser = require(\"mongoose\");"],
+    "description": "bodyParser Require"
+  },
+  "Axios Require": {
+    "prefix": "req_axios",
+    "body": ["import axios from \"axios\";"],
+    "description": "Axios Require"
+  },
+  "Use BodyParser": {
+    "prefix": "use_bodyparser",
+    "body": ["app.use(bodyParser.json());"],
+    "description": "Use BodyParser"
+  },
+  "Mongoose Connect": {
+    "prefix": "db_connect",
+    "body": [
+      "mongoose",
+      "  .connect(db)",
+      "  .then(() => console.log(\"💻 Mondodb Connected\"))",
+      "  .catch(err => console.error(err));"
+    ],
+    "description": "Mongoose Connect"
+  },
+  "App Get": {
+    "prefix": "app.get",
+    "body": ["app.get(\"$1\", (req, res) => {", "  $2", "});"],
+    "description": "App Get"
+  },
+  "App Post": {
+    "prefix": "app.post",
+    "body": ["app.post(\"$1\", (req, res) => {", "  $2", "});"],
+    "description": "App Post"
+  },
+  "App Listen": {
+    "prefix": "app.listen",
+    "body": [
+      "const port = process.env.PORT || 5000;",
+      "",
+      "app.listen(port, () => `Server running on port \\${port} 🔥`);"
+    ],
+    "description": "App listen and port"
+  },
+  "Router File": {
+    "prefix": "exp_router",
+    "body": [
+      "const express = require(\"express\");",
+      "const router = express.Router();"
+    ],
+    "description": "Express Router"
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": ["import $1 from \"$2\";"],
+    "description": "Import"
+  },
+  "db find": {
+    "prefix": "db.find",
+    "body": ["$1.find()", "    .then($1 => res.json($1));"],
+    "description": "Db Find"
+  },
+  "db save": {
+    "prefix": "db.save",
+    "body": [
+      "const newItem = new $1({",
+      "  $2: req.body.$3",
+      "});",
+      "",
+      "newItem.save().then($4 => {",
+      "  res.json($4);",
+      "});"
+    ],
+    "description": "Database New Item"
+  },
+  "route_details_public": {
+    "prefix": "route_details",
+    "body": [
+      "/*",
+      "    @route $1 api/$2",
+      "    @desc $3",
+      "    @access public",
+      "*/"
+    ],
+    "description": "route_details"
+  },
+  "route_details_private": {
+    "prefix": "route_details_private",
+    "body": [
+      "/*",
+      "    @route $1 api/$2",
+      "    @desc $3",
+      "    @access private",
+      "*/"
+    ],
+    "description": "route_details"
+  },
+  "Module Export": {
+    "prefix": "mod_exp",
+    "body": ["module.exports = $1;"],
+    "description": "Module Export"
+  },
+  "Router Get": {
+    "prefix": "router.get",
+    "body": ["router.get(\"/$1\", (req, res) => {", "  $1", "});", ""],
+    "description": "Router Get"
+  },
+  "Router Post": {
+    "prefix": "router_post",
+    "body": ["router.post(\"/$1\", (req, res) => {", "  $2", "});", ""],
+    "description": "Router Post"
+  },
+  "Router Delete": {
+    "prefix": "router_delete",
+    "body": ["router.delete(\"/$1\", (req, res) => {", "  $2", "});", ""],
+    "description": "Router Delete"
+  },
+  "Mongoose Schema": {
+    "prefix": "mongoose_schema",
+    "body": ["const Schema = mongoose.Schema;"],
+    "description": "Mongoose Schema"
+  },
+  "Scheme Export": {
+    "prefix": "scheme_export",
+    "body": ["module.exports = $1 = mongoose.model(\"$2\", $3);"],
+    "description": "Schema Export"
+  },
+  "Mongoose Schema ": {
+    "prefix": "schema",
+    "body": [
+      "const mongoose = require(\"mongoose\");",
+      "const Schema = mongoose.Schema;",
+      "",
+      "const $1 = new Schema({",
+      "  $2: {",
+      "    type: $3,",
+      "    required: true",
+      "  } ",
+      "});",
+      "",
+      "module.exports = Item = mongoose.model(\"item\", $1);"
+    ],
+    "description": "Mongoose Schema"
+  },
+  "Schema Date": {
+    "prefix": "schema_date",
+    "body": ["date: {", "    type: Date,", "    default: Date.now", "  }"],
+    "description": "Schema Date"
+  },
+  "Schema String": {
+    "prefix": "schema_string",
+    "body": ["$1: {", "    type: String,", "    required: true", "  },"],
+    "description": "Schema String"
+  },
+  "Server": {
+    "prefix": "server",
+    "body": [
+      "const express = require(\"express\");",
+      "const mongoose = require(\"mongoose\");",
+      "const bodyParser = require(\"body-parser\");",
+      "",
+      "const app = express();",
+      "",
+      "app.use(bodyParser.json());",
+      "",
+      "const db = require(\"./config/keys\").mongoURI;",
+      "",
+      "mongoose",
+      "  .connect(db)",
+      "  .then(() => console.log(\"💻 Mondodb Connected\"))",
+      "  .catch(err => console.error(err));",
+      "",
+      "app.get(\"/\", (req, res) => {",
+      "  res.send(\"Server working 🔥\");",
+      "});",
+      "",
+      "",
+      "const port = process.env.PORT || 5000;",
+      "",
+      "app.listen(port, () => `Server running on port ${port} 🔥`);"
+    ],
+    "description": "MERN Server"
+  },
+  "Mongo Config": {
+    "prefix": "keys_conf",
+    "body": ["module.exports = {", "  mongoURI:", "    \"$1\"", "};"],
+    "description": "Keys Config"
+  },
+  "db.delete": {
+    "prefix": "db.delete",
+    "body": [
+      "$1.findById(req.params.id)",
+      "    .then($2 => $2.remove().then(() => res.json({ success: true })))",
+      "    .catch(err => {",
+      "      res.status(400).json({ success: false });",
+      "    });"
+    ],
+    "description": "db.delete"
+  },
+  "db.keys": {
+    "prefix": "sb.keys",
+    "body": ["const db = require(\"./config/keys\").mongoURI;"],
+    "description": "db.keys"
+  },
+  "Import React": {
+    "prefix": "imp_react",
+    "body": ["import React, { Component } from \"react\";"],
+    "description": "Import React"
+  },
+  "imp_store": {
+    "prefix": "imp_store",
+    "body": ["import store from \"./store\";"],
+    "description": "Import Store"
+  },
+  "React Class Component": {
+    "prefix": "rcc",
+    "body": [
+      "import React, { Component } from \"react\"; ",
+      "",
+      "class $1 extends Component {",
+      "  render() {",
+      "    return (",
+      "     <div>",
+      "       $2",
+      "     </div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "React Class Component"
+  },
+  "Import Provider": {
+    "prefix": "imp_provider",
+    "body": ["import { Provider } from \"react-redux\";"],
+    "description": "Import Provider"
+  },
+  "Import Axios": {
+    "prefix": "imp_axios",
+    "body": ["import axios from \"axios\";"],
+    "description": "Import Axios"
+  },
+  "actions_get": {
+    "prefix": "actions_get",
+    "body": [
+      "export const $1 = () => dispatch => {",
+      "  dispatch(setItemsLoading());",
+      "  axios.get(\"$2\").then(res =>",
+      "    dispatch({",
+      "      type: $3,",
+      "      payload: res.data",
+      "    })",
+      "  );",
+      "};"
+    ],
+    "description": "actions_get"
+  },
+  "actions_post": {
+    "prefix": "actions_post",
+    "body": [
+      "export const $1 = () => dispatch => {",
+      "  dispatch(setItemsLoading());",
+      "  axios.post(\"$2\").then(res =>",
+      "    dispatch({",
+      "      type: $3,",
+      "      payload: res.data",
+      "    })",
+      "  );",
+      "};"
+    ],
+    "description": "actions_post"
+  },
+  "actions_delete": {
+    "prefix": "actions_delete",
+    "body": [
+      "export const $1 = () => dispatch => {",
+      "  dispatch(setItemsLoading());",
+      "  axios.delete(\"$2\").then(res =>",
+      "    dispatch({",
+      "      type: $3,",
+      "      payload: res.data",
+      "    })",
+      "  );",
+      "};"
+    ],
+    "description": "actions_delete"
+  },
+  "actions": {
+    "prefix": "actions",
+    "body": [
+      "export const $1 = () => {",
+      "  return {",
+      "    type: $2",
+      "  };",
+      "};"
+    ],
+    "description": "actions"
+  },
+  "rootReducer": {
+    "prefix": "rootReducer",
+    "body": [
+      "import { combineReducers } from \"redux\";",
+      "import { $1 } from \"./$2\";",
+      "",
+      "export default combineReducers({",
+      "  item: $1",
+      "});",
+      ""
+    ],
+    "description": "rootReducer"
+  },
+  "reducer": {
+    "prefix": "reducer",
+    "body": [
+      "export default function(state = initialState, action) {",
+      "  switch (action.type) {",
+      "    case $1:",
+      "      return {",
+      "        ...state,",
+      "        $2",
+      "      };",
+      "     ",
+      "    default:",
+      "      return state;",
+      "  }",
+      "}"
+    ],
+    "description": "reducer"
+  },
+  "import connect": {
+    "prefix": "imp_connect",
+    "body": ["import { connect } from \"react-redux\";"],
+    "description": "Import Connect"
+  },
+  "Function": {
+    "prefix": "fun",
+    "body": ["$1 = ($2) => {", "    $3", "  };"],
+    "description": "Function"
+  },
+  "Export and connect": {
+    "prefix": "exp_conn",
+    "body": [
+      "const mapStateToProps = state => ({",
+      "  $1: state.$2",
+      "});",
+      "",
+      "export default connect(",
+      "  mapStateToProps,",
+      "  { $3 }",
+      ")($4);"
+    ],
+    "description": "Export and connect"
+  },
+  "Action Payload": {
+    "prefix": "payload",
+    "body": ["action.payload"],
+    "description": "Action Payload"
+  },
+  "import proptypes": {
+    "prefix": "imp_prop",
+    "body": ["import PropTypes from \"prop-types\";"],
+    "description": "Import Proptypes"
+  },
+  "Import Css Transition": {
+    "prefix": "imp_csstrans",
+    "body": [
+      "import { CSSTransition, TransitionGroup } from \"react-transition-group\";"
+    ],
+    "description": "Import Css Transition"
+  },
+  "Store": {
+    "prefix": "store",
+    "body": [
+      "import { createStore, applyMiddleware, compose } from \"redux\";",
+      "import thunk from \"redux-thunk\";",
+      "import rootReducer from \"./reducers\";",
+      "",
+      "const initialState = {};",
+      "",
+      "const middleware = [thunk];",
+      "",
+      "const store = createStore(",
+      "  rootReducer,",
+      "  initialState,",
+      "  compose(",
+      "    applyMiddleware(...middleware),",
+      "    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()",
+      "  )",
+      ");",
+      "",
+      "export default store;"
+    ],
+    "description": "Store"
+  },
+  "Axios Get": {
+    "prefix": "axios.get",
+    "body": [
+      "axios",
+      "  .get(\"$1\")",
+      "  .then(res => $2)",
+      "  .catch(err => console.error(err));"
+    ],
+    "description": "Axios Get "
+  },
+  "Axios Post": {
+    "prefix": "axios.post",
+    "body": [
+      "axios",
+      "  .post(\"$1\")",
+      "  .then(res => $2)",
+      "  .catch(err => console.error(err));"
+    ],
+    "description": "Axios Post"
+  },
+  "Axios Delete": {
+    "prefix": "axios.delete",
+    "body": [
+      "axios",
+      "  .delete(\"$1\")",
+      "  .then(res => $2)",
+      "  .catch(err => console.error(err));"
+    ],
+    "description": "Axios Delete"
+  }
+}
