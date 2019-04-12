@@ -7,7 +7,7 @@ MERN Snippets include Redux, Axios Snippets 😎
 
 1. Install the extension
 2. You will get suggestion when you type the commands
-3. Hit Tab or enter
+3. Hit Tab or Enter
 
 ## Command
 
@@ -90,6 +90,7 @@ MERN Snippets include Redux, Axios Snippets 😎
 
 </tbody>
 </table>
+
 ## Changelog
 
 ### 1.0.0
