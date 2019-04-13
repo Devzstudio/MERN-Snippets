@@ -21,7 +21,7 @@
   },
   "BodyParser Require": {
     "prefix": "req_bodyparser",
-    "body": ["const bodyParser = require(\"mongoose\");"],
+    "body": ["const bodyParser = require(\"body-parser\");"],
     "description": "bodyParser Require"
   },
   "Axios Require": {
