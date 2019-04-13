@@ -643,6 +643,7 @@ axios
 <tr>
 <th>Shortcut</th>
 <th>Description</th>
+<th>Output</th>
 </tr>
 <tbody>
 
