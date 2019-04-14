@@ -159,7 +159,7 @@
       "  } ",
       "});",
       "",
-      "module.exports = Item = mongoose.model(\"item\", $1);"
+      "module.exports = $4 = mongoose.model(\"$5\", $1);"
     ],
     "description": "Mongoose Schema"
   },
@@ -167,6 +167,11 @@
     "prefix": "schema_date",
     "body": ["date: {", "    type: Date,", "    default: Date.now", "  }"],
     "description": "Schema Date"
+  },
+  "Schema Number": {
+    "prefix": "schema_number",
+    "body": ["date: {", "    type: Number,", "     min: 18, max: 65 ", "  }"],
+    "description": "Schema Number"
   },
   "Schema String": {
     "prefix": "schema_string",
@@ -178,11 +183,10 @@
     "body": [
       "const express = require(\"express\");",
       "const mongoose = require(\"mongoose\");",
-      "const bodyParser = require(\"body-parser\");",
       "",
       "const app = express();",
       "",
-      "app.use(bodyParser.json());",
+      "app.use(express.json());",
       "",
       "const db = require(\"./config/keys\").mongoURI;",
       "",

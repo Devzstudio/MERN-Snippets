@@ -93,6 +93,17 @@ Model.findById(req.params.id)
 </tr>
 
 <tr>
+<td>db.findone</td>
+<td>Mongoose findOne</td>
+<td>
+User.findOne({ email })
+    .then(user =>{
+      
+    })
+   </td>
+</tr>
+
+<tr>
 <td>mongoose_schema</td>
 <td>Define schema </td>
 <td>
@@ -293,6 +304,23 @@ router.delete("/", (req, res) => {
 </td>
 </tr>
 
+<tr>
+<td>res.err</td>
+<td>400 Response</td>
+<td>return res.status(400).json({ message: 'Error' });</td>
+</tr>
+
+<tr>
+<td>res.success</td>
+<td>200 Response</td>
+<td>return res.json({ message: 'Success' });</td>
+</tr>
+
+<tr>
+<td>req.des</td>
+<td>Destructure Request</td>
+<td>const {name} = req.body</td>
+</tr>
 </tbody>
 </table>
 
@@ -556,6 +584,18 @@ export const getItems = () => dispatch => {
 </tr>
 
 <tr>
+<td>itemloading</td>
+<td>Loading action</td>
+<td>
+export const setItemsLoading = () => {
+  return {
+    type: ITEMS_LOADING
+  };
+};
+</td>
+</tr>
+
+<tr>
 <td>payload</td>
 <td>Short for action.payload</td>
 <td>
@@ -654,6 +694,12 @@ axios
 </tr>
 
 <tr>
+<td>req_bcryptjs</td>
+<td>Require bcryptjs</td>
+<td>const bcrypt = require('bcryptjs')</td>
+</tr>
+
+<tr>
 <td>fun</td>
 <td>ES6 Arrow function</td>
 <td>
@@ -684,6 +730,20 @@ clickHandler = (e) => {
 <td>export default</td>
 <td>
 export default Item;
+</td>
+</tr>
+
+<tr>
+<td>bcrypt.salt</td>
+<td>Generate salt</td>
+<td>
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(newUser.password, salt, (err, hash) => {
+        if (err) throw err;
+        newUser.password = hash;
+        newUser.save().then(user => res.json(user));
+      });
+    });
 </td>
 </tr>
 
