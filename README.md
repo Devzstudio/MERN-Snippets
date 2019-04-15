@@ -197,7 +197,13 @@ const bodyParser = require("body-parser");
 <td>
 app.use(bodyParser.json());
 </td>
- 
+</tr>
+
+<tr>
+<td>use_cors</td>
+<td>Use CORS</td>
+<td>
+app.use(cors());</td>
 </tr>
 
 <tr>
@@ -677,6 +683,37 @@ axios
 </tbody>
 </table>
 
+## GraphQL
+
+<table>
+<tr>
+<th>Shortcut</th>
+<th>Description</th>
+<th>Output</th>
+</tr>
+<tbody>
+
+<tr>
+<td>req_graphqlhttp</td>
+<td>Require graphqlHTTP Http</td>
+<td>const graphqlHTTP = require('express-graphql');</td>
+</tr>
+
+<tr>
+<td>imp_apolloclient</td>
+<td>Import ApolloClient</td>
+<td>import ApolloClient from 'apollo-boost';</td>
+</tr>
+
+<tr>
+<td>imp_apolloprovider</td>
+<td>Import ApolloProvider</td>
+<td>import { ApolloProvider } from 'react-apollo';</td>
+</tr>
+
+</tbody>
+</table>
+
 ## MISC
 
 <table>
@@ -694,9 +731,27 @@ axios
 </tr>
 
 <tr>
+<td>req_cors</td>
+<td>Require CORS</td>
+<td>const cors = require('cors');</td>
+</tr>
+
+<tr>
 <td>req_bcryptjs</td>
 <td>Require bcryptjs</td>
 <td>const bcrypt = require('bcryptjs')</td>
+</tr>
+
+<tr>
+<td>req_jwt</td>
+<td>Require Json Web Tokens</td>
+<td>const jwt = require('jsonwebtoken')</td>
+</tr>
+
+<tr>
+<td>req_config</td>
+<td>Require config</td>
+<td>const config = require("config");</td>
 </tr>
 
 <tr>

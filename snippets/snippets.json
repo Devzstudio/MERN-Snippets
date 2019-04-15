@@ -183,12 +183,13 @@
     "body": [
       "const express = require(\"express\");",
       "const mongoose = require(\"mongoose\");",
+      "const config = require(\"config\");",
       "",
       "const app = express();",
       "",
       "app.use(express.json());",
       "",
-      "const db = require(\"./config/keys\").mongoURI;",
+      "const db = config.get(\"mongoURI\");",
       "",
       "mongoose",
       "  .connect(db)",
@@ -447,5 +448,93 @@
       "  .catch(err => console.error(err));"
     ],
     "description": "Axios Delete"
+  },
+  "Response Failed": {
+    "prefix": "res.err",
+    "body": ["return res.status(400).json({ message: '$1' });"],
+    "description": "Response Failed"
+  },
+  "Response Success": {
+    "prefix": "res.success",
+    "body": ["return res.json({ message: '$1' });"],
+    "description": "Success Response"
+  },
+  "Item Loading": {
+    "prefix": "itemloading",
+    "body": [
+      "export const setItemsLoading = () => {",
+      "  return {",
+      "    type: ITEMS_LOADING",
+      "  };",
+      "};"
+    ],
+    "description": "items loading"
+  },
+  "Request Destructure": {
+    "prefix": "req.des",
+    "body": ["const {$1} = req.body;"],
+    "description": "Request Destructure"
+  },
+  "Db findOne": {
+    "prefix": "db.findone",
+    "body": [
+      "  $1.findOne({ $2})",
+      "      .then($3 => {",
+      "        $4",
+      "      })"
+    ],
+    "description": "db findOne"
+  },
+  "Require Bcryptjs": {
+    "prefix": "req_bcryptjs",
+    "body": ["const bcrypt = require('bcryptjs')"],
+    "description": "Require Bcryptjs"
+  },
+  "Bcrypt Salt": {
+    "prefix": "bcrypt.salt",
+    "body": [
+      "    bcrypt.genSalt(10, (err, salt) => {",
+      "      bcrypt.hash($1, salt, (err, hash) => {",
+      "        if (err) throw err;",
+      "        $2",
+      "      });",
+      "    });"
+    ],
+    "description": "Bcrypt Salt"
+  },
+  "Require Config": {
+    "prefix": "req_config",
+    "body": ["const config = require(\"config\");"],
+    "description": "require config"
+  },
+  "Require JWT": {
+    "prefix": "req_jwt",
+    "body": ["const jwt = require('jsonwebtoken')"],
+    "description": "Require JWT"
+  },
+  "Require GraphQL Http": {
+    "prefix": "req_graphqlhttp",
+    "body": ["const graphqlHTTP = require('express-graphql');"],
+    "description": "Require GraphqlHTTP"
+  },
+  "Require CORS": {
+    "prefix": "req_cors",
+    "body": ["const cors = require('cors');"],
+    "description": "Require CORS"
+  },
+  "Use CORS": {
+    "prefix": "use_cors",
+    "body": ["app.use(cors());"],
+    "description": "Use Cors"
+  },
+  "Import ApolloClient": {
+    "prefix": "imp_apolloclient",
+    "body": ["import ApolloClient from 'apollo-boost';"],
+    "description": "Import apollo client"
+  },
+  "Import ApolloProvider": {
+    "prefix": "imp_apolloprovider",
+    "body": ["import { ApolloProvider } from 'react-apollo';"],
+    "description": "Import Apollo Provider"
   }
 }
